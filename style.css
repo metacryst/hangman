@@ -1,0 +1,14 @@
+body {
+  background-color: rgb(215, 119, 94);
+}
+
+.button {
+  margin: 10px;
+}
+
+.space {
+  height: 50px;
+  width: 50px;
+  border-color: rgba(61, 203, 38, 0);
+  border-bottom: 3px solid;
+}
