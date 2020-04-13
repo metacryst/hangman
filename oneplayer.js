@@ -1,12 +1,9 @@
 //possibilities: 
-// bundle with other version to create single or multi player options
-// (begin with landing screen)
+// work on one player
+// work on drawing man
 // check word against dictionary api to see if it's real
 // fix case sensitivity by making input to lower case
-
-// style:
-// make button sexy
-// make input sexy
+// put reset button
 
 
 
@@ -22,18 +19,16 @@ let numberGuesses = 0;
 
 // add event listeners
 playButton.addEventListener('click', playGame);
-inputBox.addEventListener('keyup', function (event) {
-    event.preventDefault();
-    if (event.keyCode === 13) {
-        playButton.click();
-    }
-});
+
 
 
 // set game up
 function playGame() {
-    const wordInput = document.querySelector('.word-input').value
     const wordLetters = [];
+    // wordinput should be random word bank word
+    var wordInput = require('random-words');
+    console.log(randomWords());
+    
     for (i = 0; i < wordInput.length; i++) {
         wordLetters[i] = wordInput.substr(i, 1);
         word[i] = wordInput.substr(i, 1);
@@ -79,11 +74,11 @@ function guessLetter() {
             correctlyGuessedLetters.push(wordLetters[i]);
             word[i] = '0';
             console.log(characterCorrect);
-            
+
         }
     }
     if (isGuessCorrect === true) {
-        for (let i=0; i < characterCorrect.length; i++) {        
+        for (let i = 0; i < characterCorrect.length; i++) {
             document.querySelector(`#letter${characterCorrect[i]}`).innerText = wordLetters[characterCorrect[i]];
             heading.innerText = 'nice one!';
         }
