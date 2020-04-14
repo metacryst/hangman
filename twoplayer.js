@@ -1,9 +1,6 @@
 //possibilities: 
-// bundle with other version to create single or multi player options
-// (begin with landing screen)
 // check word against dictionary api to see if it's real
-
-// make a button to refresh at end of game
+// take endgame from one player game
 
 
 
@@ -12,6 +9,8 @@ const spacesContainer = document.querySelector('.spaces-container');
 const heading = document.querySelector('#info-header');
 const inputBox = document.querySelector('.word-input');
 const alphabetBar = document.querySelector('.alphabet')
+const playAgainButton = document.querySelector('.playAgain');
+const mainMenuButton = document.querySelector('#main-menu');
 const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 let word = [];
 let correctlyGuessedLetters = [];
@@ -64,6 +63,7 @@ function makeAlphabet() {
 
 
 function guessLetter() {
+    window.clearTimeout(timer);
     numberGuesses += 1;
     const wordLetters = [];
     let isGuessCorrect = '';
@@ -100,9 +100,6 @@ function guessLetter() {
 
 
 
-
-
-
 function checkWinner() {
     if (correctlyGuessedLetters.length === word.length) {
         heading.innerText = 'PLAYER 2 WINS';
@@ -110,12 +107,17 @@ function checkWinner() {
     }
 }
 
+
+var timer;
+
+
 function guessWrong() {
-    if (numberGuesses != 6) {
+    if (numberGuesses <= 5) {
         heading.innerText = 'wrong!';
-        setTimeout(putHeaderBack, 1100);
+        timer = setTimeout(putHeaderBack, 1100);
     }
     else if (numberGuesses == 6) {
+        window.clearTimeout(timer);
         heading.innerText = 'WRONG! PLAYER 1 WINS';
     }
 }

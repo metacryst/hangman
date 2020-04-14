@@ -343,8 +343,6 @@ words.wordList = wordList;
 },{}],2:[function(require,module,exports){
 //possibilities: 
 // work on drawing man
-// check word against dictionary api to see if it's real
-
 
 
 const playButton = document.querySelector('.playButton');
@@ -398,7 +396,7 @@ function makeAlphabet() {
 
 
 function guessLetter() {
-    window.clearTimeout();
+    window.clearTimeout(timer);
     numberGuesses += 1;
     const wordLetters = [];
     let isGuessCorrect = '';
@@ -446,13 +444,15 @@ function checkWinner() {
     }
 }
 
+var timer;
+
 function guessWrong() {
-    if (numberGuesses != 6) {
+    if (numberGuesses <= 5) {
         heading.innerText = 'wrong!';
-        var resetHeader = setTimeout(putHeaderBack, 1100);
+        timer = setTimeout(putHeaderBack, 1100);
     }
-    else if (numberGuesses == 6) {
-        window.clearTimeout(resetHeader);
+    else if (numberGuesses === 6) {
+        window.clearTimeout(timer);
         heading.innerText = 'WRONG! YOU LOSE!';
         gameOver();
     }
