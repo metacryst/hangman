@@ -342,11 +342,8 @@ words.wordList = wordList;
 
 },{}],2:[function(require,module,exports){
 //possibilities: 
-// work on one player
 // work on drawing man
 // check word against dictionary api to see if it's real
-// fix case sensitivity by making input to lower case
-// put reset button
 
 
 
