@@ -26,7 +26,8 @@ playButton.addEventListener('click', playGame);
 function playGame() {
     const wordLetters = [];
     // wordinput should be random word bank word
-    var wordInput = require('random-words');
+    var randomWords = require('random-words')
+    var wordInput = randomWords();
     console.log(randomWords());
     
     for (i = 0; i < wordInput.length; i++) {

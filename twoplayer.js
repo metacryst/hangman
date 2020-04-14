@@ -2,7 +2,6 @@
 // bundle with other version to create single or multi player options
 // (begin with landing screen)
 // check word against dictionary api to see if it's real
-// fix case sensitivity by making input to lower case
 
 // make a button to refresh at end of game
 
@@ -30,8 +29,10 @@ inputBox.addEventListener('keyup', function (event) {
 
 // set game up
 function playGame() {
-    const wordInput = document.querySelector('.word-input').value
+    const wordInput = document.querySelector('.word-input').value.toLowerCase();
     const wordLetters = [];
+    console.log(wordInput);
+    
     for (i = 0; i < wordInput.length; i++) {
         wordLetters[i] = wordInput.substr(i, 1);
         word[i] = wordInput.substr(i, 1);
