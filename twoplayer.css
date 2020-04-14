@@ -38,6 +38,27 @@ h1 {
   text-align: center;
 }
 
+.button-wrapper {
+  text-align: center;
+}
+
+.playAgain {
+  height: 50px;
+  width: 120px;
+  display: none;
+  margin-top: 500px;
+  color: white;
+  font-size: 13pt;
+}
+
+.main-menu {
+  height: 50px;
+  width: 115px;
+  display: none;
+  color: white;
+  font-size: 13pt;
+}
+
 .space {
   height: 60px;
   width: 50px;

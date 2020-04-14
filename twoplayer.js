@@ -10,7 +10,7 @@ const heading = document.querySelector('#info-header');
 const inputBox = document.querySelector('.word-input');
 const alphabetBar = document.querySelector('.alphabet')
 const playAgainButton = document.querySelector('.playAgain');
-const mainMenuButton = document.querySelector('#main-menu');
+const mainMenuButton = document.querySelector('.main-menu');
 const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 let word = [];
 let correctlyGuessedLetters = [];
@@ -104,12 +104,11 @@ function checkWinner() {
     if (correctlyGuessedLetters.length === word.length) {
         heading.innerText = 'PLAYER 2 WINS';
         heading.fontSize = '120px';
+        gameOver();
     }
 }
 
-
 var timer;
-
 
 function guessWrong() {
     if (numberGuesses <= 5) {
@@ -119,9 +118,23 @@ function guessWrong() {
     else if (numberGuesses == 6) {
         window.clearTimeout(timer);
         heading.innerText = 'WRONG! PLAYER 1 WINS';
+        gameOver();
     }
 }
 
 function putHeaderBack() {
     heading.innerText = 'guess again!';
+}
+
+function gameOver() {
+    console.log('game over!');
+    alphabetBar.style.display = 'none';
+    spacesContainer.style.display = 'none';
+    setTimeout(playAgain, 3000);
+}
+
+function playAgain() {
+    playAgainButton.style.display = 'inline';
+    mainMenuButton.style.display = 'inline';
+    heading.innerText = '...play again?';
 }
