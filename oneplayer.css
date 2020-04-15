@@ -13,7 +13,6 @@ h1 {
   margin-right: 10px;
   margin-left: 38px;
   font-size: 11pt;
-  text-decoration: bold;
   outline: solid black;
   outline-width: 2px;
   border: none;
@@ -76,4 +75,11 @@ h1 {
 .letter {
   text-decoration: none;
   color: white;
+}
+
+.sidebar {
+  margin-left: 25%;
+  width: 25%;
+  height: 100%;
+  right: 0;
 }

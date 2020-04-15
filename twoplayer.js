@@ -1,7 +1,6 @@
 //possibilities: 
 // check word against dictionary api to see if it's real
-// take endgame from one player game
-
+// draw man
 
 
 const playButton = document.querySelector('.playButton');
