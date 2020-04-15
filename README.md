@@ -12,6 +12,7 @@ it is constructed with HTML, CSS, and JavaScript.
  - reset game feature
  - over 2000 words to play with in single player
  - support for capital or lowercase letters in multiplayer
+ - uses dictionary API in multiplayer to make sure a word is real
  
  ### for the future: 
  
