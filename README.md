@@ -18,6 +18,7 @@ it is constructed with HTML, CSS, and JavaScript.
  
  ### for the future: 
  
- - use dictionary api to check if a player-entered word is real
- - draw the man being hung
+ - unfortunately, entering a single letter is currently a loophole in multiplayer. merriam-webster treats individual letters like words in their API, so that would have to be circumvented somehow.
+ 
+ - draw the man being hung, of course!
 
